@@ -9,6 +9,15 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
+VALIDATE(){
+    if [ $1 -ne 0 ]
+    then
+        echo "$2....FAILURE"
+    else
+        echo "$2....SUCCESS"
+    fi
+}
+
 for i in $@
 do
     echo "Package to Install: $i"
@@ -17,6 +26,7 @@ do
     then
         echo -e "$i is already installed.... $Y SKIPPING $N"
     else
-        echo "$i needs to be installed"
+        dnf install $i -y &>>$LOGFILE
+        VALIDATE $? "Installation of $i"
     fi
 done
