@@ -1,6 +1,8 @@
 #!/bin/bash
 
-NUMBER=$1
+echo "Please enter a number:: "
+
+read NUMBER
 
 if [ $NUMBER -gt 10 ]
 then
