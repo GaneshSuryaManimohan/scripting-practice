@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LIST ("Cricket" "Movies" "food")
+LIST=("Cricket" "Movies" "food")
 
 echo "First element of the list is:: ${LIST[0]}"
 echo "Second element of the list is:: ${LIST[1]}"
