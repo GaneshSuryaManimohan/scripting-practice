@@ -5,10 +5,10 @@ TIME_STAMP=$(date +%F-%H:%M:%S)
 SCRIPT_NAME=$(echo $0 |awk -F "." '{print $1}')
 #SCRIPT_NAME=$(echo $0 |cut -d "." -f1)
 LOGFILE=/tmp/$SCRIPT_NAME-$TIME_STAMP.log
-R=\e[31m
-G=\e[32m
-Y=\e[33m
-N=\e[0m
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 echo -e "$Y Script started at $TIME_STAMP $N"
 
 VALIDATE(){
