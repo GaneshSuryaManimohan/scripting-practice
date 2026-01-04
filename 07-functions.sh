@@ -5,13 +5,18 @@ TIME_STAMP=$(date +%F-%H:%M:%S)
 SCRIPT_NAME=$(echo $0 |awk -F "." '{print $1}')
 #SCRIPT_NAME=$(echo $0 |cut -d "." -f1)
 LOGFILE=/tmp/$SCRIPT_NAME-$TIME_STAMP.log
+R=\e[31m
+G=\e[32m
+Y=\e[33m
+N=\e[0m
+echo -e "$Y Script started at $TIME_STAMP $N"
 
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo "$2....FAILURE"
+        echo -e "$2....$R FAILURE $N"
     else
-        echo "$2....SUCCESS"
+        echo -e "$2....$G SUCCESS $N"
     fi
 }
 
@@ -31,6 +36,10 @@ dnf install git -y &>>$LOGFILE
 
 VALIDATE $? "Installation of GIT"
 
+dnf install dockerrr -y
+VALIDATE $? "Installation of Docker"
+
+
 #In functions, we are trying to avoid repetition of code.
 #In 10-installation.sh, after every installation, we used to a step to validate whether the exit code is 0 or not and the proceed with installation.
 #Here, we created a VALIDATE function in which we are validating the variables $1 that is whether the exit code of previous run is 0 or not ($?)
@@ -42,3 +51,8 @@ VALIDATE $? "Installation of GIT"
 # 2> it will ONLY redirect error output
 # &> it will redirect both success & error output
 # &>> it will append both success & error output
+# Color Codes:
+##### Red = \e[31m
+##### Green = \e[32m
+##### Yellow = \e[33m
+##### No color = \e[0m
