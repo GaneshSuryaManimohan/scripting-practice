@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Please enter a number:: "
+echo "Please enter a number::"
 
 read NUMBER
 
