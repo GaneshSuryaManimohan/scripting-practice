@@ -12,8 +12,15 @@ then
     echo -e "$G Source Directory exists $N"
 else
     echo -e "$R Make sure $SOURCE_DIR exists $N"
+    exit 1
 fi
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 
 echo "Files to delete: $FILES"
+
+while IFS= read -r line
+do
+    echo "Deleting File: $line"
+    rm -rf $line
+done <<< $FILES
