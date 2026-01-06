@@ -1,6 +1,10 @@
 #!/bin/bash
 
 set -e
+failure(){
+    echo "Error on line $1:$2"
+}
+trap 'failure "${LINENO}" "$BASH_COMMAND"' ERR
 
 USERID=$(id -u) #storing output of command "id -u" to a variable called USERID
 
