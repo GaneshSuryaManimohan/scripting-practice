@@ -21,8 +21,8 @@ echo "Other script is called here and name from other script is:: $NAME"
 # Process ID of this script is:: 1837
 # Other script is called here and name from other script is:: GANESH SURYA MANIMOHAN
 
-# In this method the variable values are not changed after calling other script
-# PIDs of two scripts are also different
+# ``` In this method the variable values are not changed after calling other script ```
+# ``` PIDs of two scripts are also different ```
 
 # Output Method2: source ./10-other-script.sh
 # sh 09-current-script.sh
@@ -32,5 +32,5 @@ echo "Other script is called here and name from other script is:: $NAME"
 # Process ID of this script is:: 5341
 # Other script is called here and name from other script is:: THUTTAGUNTA
 
-# In this method the variable values are changed after calling other script
-# PIDs of two scripts are same
+# ``` In this method the variable values are changed after calling other script ```
+# ``` PIDs of two scripts are same ```
