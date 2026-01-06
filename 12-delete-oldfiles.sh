@@ -17,7 +17,7 @@ fi
 
 FILES=$(find "$SOURCE_DIR" -name "*.log" -mtime +14)
 
-echo "$Y Files to delete:$N $FILES "
+echo -e "$Y Files to delete:$N $FILES "
 
 while IFS= read -r line
 do
