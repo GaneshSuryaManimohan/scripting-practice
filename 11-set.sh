@@ -12,7 +12,7 @@ else
     echo "Running the command as a root user"
 fi
 
-dnf install mysqljkl -y
+dnf install mysdffgqdsl -y
 dnf install git -y
 echo "script is proceeding"
 
