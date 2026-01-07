@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MEM_USAGE=$(free -mh |grep Mem )
+MEM_USAGE=$(free -m |grep Mem )
 MEM_THR=100
 
 while IFS= read -r line
