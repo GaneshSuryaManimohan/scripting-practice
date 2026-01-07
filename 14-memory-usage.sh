@@ -11,4 +11,4 @@ do
     then
         echo "Memory Usage $USAGE is more than $MEM_THR, free space available is $AVAIL"
     fi
-done
+done <<< $MEM_USAGE
